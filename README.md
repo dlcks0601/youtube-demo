@@ -38,7 +38,7 @@
 
 1. 채널 "생성" : POST /channel
 
-- req : body (channelTitle)
+- req : body (channelTitle, userId) cf. userId는 body x header 숨겨서 ... token
 - res20 : '${channelTitle}님 채널을 응원합니다.' 👉 다른 페이지 띄워주고 싶어 .. ex. 채널 관리자 페이지
 
 2. 채널 개별 "수정" : PUT /channel/:id
@@ -53,10 +53,30 @@
 
 4. 채널 전체 "조회" : GET /channels
 
-- req : X
+- req : body(userId)
 - res200 : 채널 전체 데이터 list, json array
 
 5. 채널 개별 "조회" : GET /channels/:id
 
 - req : URL (id)
 - res200 : 채널 개별 데이터
+
+### ERD 고려
+
+#### 회원
+
+| user_id | password | name    |
+| ------- | -------- | ------- |
+| testId1 | 1234     | tester1 |
+| testId2 | 5678     | tester2 |
+|         |          |         |
+
+#### 채널
+
+| id  | channel_title | user_id | sub_num | video_num |
+| --- | ------------- | ------- | ------- | --------- |
+| 1   | 달려라송아    | testId1 |         |           |
+| 2   | 뛰어라송아    | testId1 |         |           |
+| 3   | 걸어라        | testId2 |         |           |
+|     |               |         |         |           |
+|     |               |         |         |           |
