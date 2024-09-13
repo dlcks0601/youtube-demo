@@ -80,3 +80,17 @@
 | 3   | 걸어라        | testId2 |         |           |
 |     |               |         |         |           |
 |     |               |         |         |           |
+
+### db-demo
+
+mysql2 first query 수정
+
+> timezone 설정
+
+```
+timezone: 'Asia/Seoul',
+```
+
+```
+dateStrings: true,,
+```
