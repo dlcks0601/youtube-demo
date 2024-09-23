@@ -2,12 +2,12 @@
 
 1. 로그인 : POST/login
 
-- req : body (id,pwd)
+- req : body (email,password)
 - res : '${name}님 환영합니다'
 
 2. 회원가입 : POST/join
 
-- req : body (id,pwd)
+- req : body (email, name, pwd, contact)
 - res : '${name}님 환영합니다'
 
 1. 로그인 : GET/user/:id
