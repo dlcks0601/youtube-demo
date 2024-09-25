@@ -54,7 +54,11 @@ router.post(
                         email: loginUser.email,
                         name: loginUser.name,
                     },
-                    process.env.PRIVATE_KEY
+                    process.env.PRIVATE_KEY,
+                    {
+                        expiresIn: '30m',
+                        issuer: 'chan',
+                    }
                 );
 
                 res.cookie('token', token, {
